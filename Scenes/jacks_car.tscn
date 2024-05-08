@@ -1,0 +1,246 @@
+[gd_scene load_steps=53 format=3 uid="uid://b5sr0w2pa3iyy"]
+
+[ext_resource type="Script" path="res://Scripts/jacks_car.gd" id="1_bx8mc"]
+[ext_resource type="Texture2D" uid="uid://ctx28cnix7xpy" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_000.png" id="1_cn2oy"]
+[ext_resource type="Texture2D" uid="uid://b8b8egvagrihr" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_001.png" id="2_sy0dd"]
+[ext_resource type="Texture2D" uid="uid://d0u1gt44jmaq2" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_002.png" id="3_isb27"]
+[ext_resource type="Texture2D" uid="uid://d4j3tvd7w4n6u" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_003.png" id="4_ha2oj"]
+[ext_resource type="Texture2D" uid="uid://c2xfyldfoaapy" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_004.png" id="5_ymo12"]
+[ext_resource type="Texture2D" uid="uid://cfj3rcdmfc58f" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_005.png" id="6_jo8px"]
+[ext_resource type="Texture2D" uid="uid://cew1qd8uicrvm" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_006.png" id="7_2ssia"]
+[ext_resource type="Texture2D" uid="uid://d1ei6n1sgtkc7" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_007.png" id="8_o67vv"]
+[ext_resource type="Texture2D" uid="uid://dg71ta326j604" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_008.png" id="9_4t6el"]
+[ext_resource type="Texture2D" uid="uid://ty7bv3spti46" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_009.png" id="10_74reo"]
+[ext_resource type="Texture2D" uid="uid://io0fri80ql8o" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_010.png" id="11_1uhmk"]
+[ext_resource type="Texture2D" uid="uid://con71pgto2xwf" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_011.png" id="12_yto7m"]
+[ext_resource type="Texture2D" uid="uid://5xt283a38y1g" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_000.png" id="13_grny4"]
+[ext_resource type="Texture2D" uid="uid://ctg8rg57jlkey" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_001.png" id="14_kefn5"]
+[ext_resource type="Texture2D" uid="uid://b5j3thd6ucmsx" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_002.png" id="15_hn03s"]
+[ext_resource type="Texture2D" uid="uid://dgrnlv8340xrd" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_003.png" id="16_kfs74"]
+[ext_resource type="Texture2D" uid="uid://dj8qwbg7b0iax" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_004.png" id="17_frugi"]
+[ext_resource type="Texture2D" uid="uid://c0v1ntes1bf40" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_005.png" id="18_3poiq"]
+[ext_resource type="Texture2D" uid="uid://dcsfe37raqmg7" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_006.png" id="19_q4q2n"]
+[ext_resource type="Texture2D" uid="uid://bnvwfk2kjgiw1" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_007.png" id="20_qaoxn"]
+[ext_resource type="Texture2D" uid="uid://b5us6mx2cr65x" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_008.png" id="21_ascy0"]
+[ext_resource type="Texture2D" uid="uid://bxesjht2o4l04" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_009.png" id="22_trhgh"]
+[ext_resource type="Texture2D" uid="uid://du8n1lvhs5ktf" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_010.png" id="23_tdapx"]
+[ext_resource type="Texture2D" uid="uid://cv70h8uxn0g0f" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_011.png" id="24_kcn67"]
+[ext_resource type="Texture2D" uid="uid://bc52dvi2b6aj0" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_000.png" id="25_ry7qe"]
+[ext_resource type="Texture2D" uid="uid://brco83g6ksr6u" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_001.png" id="26_u3cv3"]
+[ext_resource type="Texture2D" uid="uid://b3hm13x6kdeya" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_002.png" id="27_jvjb1"]
+[ext_resource type="Texture2D" uid="uid://80r2l53cltlh" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_003.png" id="28_2tns6"]
+[ext_resource type="Texture2D" uid="uid://dqwhh2lfree84" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_004.png" id="29_kbo34"]
+[ext_resource type="Texture2D" uid="uid://d11ly1vxicecw" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_005.png" id="30_qptqt"]
+[ext_resource type="Texture2D" uid="uid://bfc7l2kfkt0or" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_006.png" id="31_xudkj"]
+[ext_resource type="Texture2D" uid="uid://rb3ywe72h3ah" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_007.png" id="32_sj2hq"]
+[ext_resource type="Texture2D" uid="uid://u6e8a5tyxj4s" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_008.png" id="33_t0nmh"]
+[ext_resource type="Texture2D" uid="uid://umotobiiieuo" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_009.png" id="34_0yb81"]
+[ext_resource type="Texture2D" uid="uid://bnimwmt7mcn0n" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_010.png" id="35_jqnxi"]
+[ext_resource type="Texture2D" uid="uid://cfffjplpkblux" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHEAST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHEAST_011.png" id="36_e4vbg"]
+[ext_resource type="Texture2D" uid="uid://br0xa2jkvhqdh" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_036.png" id="37_8eb78"]
+[ext_resource type="Texture2D" uid="uid://tbgcg0aphfli" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_035.png" id="38_8unxr"]
+[ext_resource type="Texture2D" uid="uid://fu36nkkk21dw" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_034.png" id="39_j83ts"]
+[ext_resource type="Texture2D" uid="uid://drncgaimcwhxe" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_033.png" id="40_1b8ss"]
+[ext_resource type="Texture2D" uid="uid://c4krmhv0jy7im" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_032.png" id="41_fx35d"]
+[ext_resource type="Texture2D" uid="uid://dgvkaiu1yy6bi" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_031.png" id="42_l8qur"]
+[ext_resource type="Texture2D" uid="uid://b5agfaqilas1x" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_030.png" id="43_3oi5i"]
+[ext_resource type="Texture2D" uid="uid://dghodb4qdbgb7" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_037.png" id="44_31mrw"]
+[ext_resource type="Texture2D" uid="uid://c3ucd7w451enh" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_038.png" id="45_dmdri"]
+[ext_resource type="Texture2D" uid="uid://b7d5txkm8p8xw" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_039.png" id="46_8p5uc"]
+[ext_resource type="Texture2D" uid="uid://bw8600j1akmx7" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_040.png" id="47_bxu7t"]
+[ext_resource type="Texture2D" uid="uid://cox0v6ct26xm8" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_041.png" id="48_oixsx"]
+[ext_resource type="Texture2D" uid="uid://c5t0xx52wqyet" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_042.png" id="49_668pq"]
+[ext_resource type="Script" path="res://Scripts/JCAnimatedSprite.gd" id="51_7vomq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8v7mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cn2oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sy0dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_isb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ha2oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ymo12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jo8px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2ssia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o67vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4t6el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_74reo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1uhmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yto7m")
+}],
+"loop": true,
+"name": &"forword",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_grny4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kefn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hn03s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kfs74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_frugi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3poiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q4q2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qaoxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ascy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_trhgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tdapx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kcn67")
+}],
+"loop": true,
+"name": &"left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ry7qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_u3cv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jvjb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2tns6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_kbo34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qptqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xudkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sj2hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_t0nmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0yb81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jqnxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_e4vbg")
+}],
+"loop": true,
+"name": &"right",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_8eb78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8unxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_j83ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_1b8ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_fx35d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_l8qur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_3oi5i")
+}],
+"loop": false,
+"name": &"turn_left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_8eb78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_31mrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_dmdri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8p5uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_bxu7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_oixsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_668pq")
+}],
+"loop": false,
+"name": &"turn_right",
+"speed": 12.0
+}]
+
+[node name="JacksCar" type="CharacterBody2D"]
+position = Vector2(786, 489)
+script = ExtResource("1_bx8mc")
+
+[node name="JCAnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8v7mt")
+animation = &"turn_right"
+speed_scale = 1.5
+script = ExtResource("51_7vomq")
+
+[node name="JCCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, -20, -11, -25, 0, -27, 11, -25, 16, -20, 20, -11, 17, 29, 11, 37, -13, 37, -18, 28, -20, -10)
+
+[connection signal="animation_finished" from="JCAnimatedSprite" to="JCAnimatedSprite" method="_on_animation_finished"]
