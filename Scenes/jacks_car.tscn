@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b5sr0w2pa3iyy"]
+[gd_scene load_steps=54 format=3 uid="uid://b5sr0w2pa3iyy"]
 
 [ext_resource type="Script" path="res://Scripts/jacks_car.gd" id="1_bx8mc"]
 [ext_resource type="Texture2D" uid="uid://ctx28cnix7xpy" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_000.png" id="1_cn2oy"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://cox0v6ct26xm8" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_041.png" id="48_oixsx"]
 [ext_resource type="Texture2D" uid="uid://c5t0xx52wqyet" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_042.png" id="49_668pq"]
 [ext_resource type="Script" path="res://Scripts/JCAnimatedSprite.gd" id="51_7vomq"]
+[ext_resource type="Script" path="res://Scripts/JCCollision.gd" id="52_nwmng"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8v7mt"]
 animations = [{
@@ -236,11 +237,15 @@ script = ExtResource("1_bx8mc")
 
 [node name="JCAnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8v7mt")
-animation = &"turn_right"
+animation = &"turn_left"
 speed_scale = 1.5
 script = ExtResource("51_7vomq")
 
 [node name="JCCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4, 0)
+rotation = -0.750492
+scale = Vector2(1, 1.1)
 polygon = PackedVector2Array(-16, -20, -11, -25, 0, -27, 11, -25, 16, -20, 20, -11, 17, 29, 11, 37, -13, 37, -18, 28, -20, -10)
+script = ExtResource("52_nwmng")
 
 [connection signal="animation_finished" from="JCAnimatedSprite" to="JCAnimatedSprite" method="_on_animation_finished"]
