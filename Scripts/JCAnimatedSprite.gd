@@ -12,21 +12,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#if Input.is_action_just_pressed("left"):
-		#turning_left = true
-		#turn_animation()
-	#elif Input.is_action_pressed("left"):
-		#turning_left = false
-		#turn_animation()
-	#
-	#if Input.is_action_just_pressed("right"):
-		#turning_right = true
-		#turn_animation()
-	#elif Input.is_action_pressed("right"):
-		#turning_right = false
-		#turn_animation()
-	#else:
-		#pass#play("forword")
 	if jacks_car.velocity.x == -jacks_car.SPEED:
 		turning_left = true
 		turn_animation()
