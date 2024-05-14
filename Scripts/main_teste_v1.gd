@@ -22,11 +22,13 @@ func _process(delta):
 
 
 func _on_barrier_timer_timeout():
-	var correct_gate_index = Barrier.GATES.values()
-	correct_gate_index = correct_gate_index[randi() % correct_gate_index.size()]
+	var opcoes = range(10,15)
+	var resposta = 13
 	
 	barrier = barrier_scene.instantiate()
-	barrier.correct_gate_index = correct_gate_index
+	barrier.answer = resposta
+	barrier.gates_labels = opcoes
+	
 	barriers.add_child(barrier)
 	barrier.global_position = Vector2(1920/2, -200)
 	

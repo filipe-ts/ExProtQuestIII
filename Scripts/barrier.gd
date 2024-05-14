@@ -30,6 +30,7 @@ enum GATE_POSITION{
 
 @export var correct_gate_index: GATES
 var correct_gate = null
+var answer = null
 
 
 @onready var gate_opener = $GateOpener
@@ -39,9 +40,12 @@ var correct_gate = null
 @onready var gate_c = $GateC
 @onready var gate_d = $GateD
 @onready var gate_e = $GateE
+var gate_array = [gate_a, gate_b, gate_c, gate_d, gate_e]
+var gates_labels: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_gates_labels(gates_labels)
 	for g in GATES:
 		var gate = GATE_SCENE.instantiate()
 		var gate_position = GATE_POSITION[g]
@@ -50,6 +54,7 @@ func _ready():
 		if GATES[g] == correct_gate_index:
 			correct_gate = gate
 			gate_opener.position.x = gate.position.x
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,4 +76,9 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
 func set_gates_labels(opcoes: Array):
-	var gate_arrey = [gate_a, gate_b, gate_c, gate_d, gate_e]
+	gate_array = [gate_a, gate_b, gate_c, gate_d, gate_e]
+	opcoes.shuffle()
+	for i in range(5):
+		(gate_array[i] as Label).text = str(opcoes[i])
+		if opcoes[i] == answer:
+			correct_gate_index = i
