@@ -2,6 +2,8 @@ extends Sprite2D
 
 class_name Barrier
 
+@onready var visible_on_screen_notifier_2d = $VisibleOnScreenNotifier2D
+
 const GATE_SCENE = preload("res://Scenes/gate.tscn")
 
 enum GATES {
@@ -32,6 +34,12 @@ var correct_gate = null
 
 @onready var gate_opener = $GateOpener
 
+@onready var gate_a = $GateA
+@onready var gate_b = $GateB
+@onready var gate_c = $GateC
+@onready var gate_d = $GateD
+@onready var gate_e = $GateE
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for g in GATES:
@@ -41,7 +49,6 @@ func _ready():
 		add_child(gate)
 		if GATES[g] == correct_gate_index:
 			correct_gate = gate
-			gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
 			gate_opener.position.x = gate.position.x
 
 
@@ -56,3 +63,12 @@ func _set_gate(gate: GATES):
 func _on_gate_opener_body_entered(body):
 	if body is JacksCar:
 		(correct_gate as Gate).set_collision_layer_value(2, false)
+		correct_gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	await get_tree().create_timer(3).timeout
+	queue_free()
+
+func set_gates_labels(opcoes: Array):
+	var gate_arrey = [gate_a, gate_b, gate_c, gate_d, gate_e]
