@@ -1,0 +1,44 @@
+{
+	"perguntas_tempo": [
+		{
+			"pergunta": "Quantos minutos há em uma hora?",
+			"resposta_correta": 60,
+			"opcoes_resposta": [30, 45, 60, 90]
+		},
+		{
+			"pergunta": "Quantos dias há em uma semana?",
+			"resposta_correta": 7,
+			"opcoes_resposta": [5, 6, 7, 8]
+		},
+		{
+			"pergunta": "Quantas horas há em um dia?",
+			"resposta_correta": 24,
+			"opcoes_resposta": [18, 24, 30, 36]
+		},
+		{
+			"pergunta": "Quantas semanas inteiras há em um mês?",
+			"resposta_correta": 4,
+			"opcoes_resposta": [3, 4, 5, 6]
+		},
+		{
+			"pergunta": "Quantos segundos há em um minuto?",
+			"resposta_correta": 60,
+			"opcoes_resposta": [30, 45, 60, 90]
+		},
+		{
+			"pergunta": "Quantos meses há em um ano?",
+			"resposta_correta": 12,
+			"opcoes_resposta": [10, 12, 14, 16]
+		},
+		{
+			"pergunta": "Quantos dias há em um ano bissexto?",
+			"resposta_correta": 366,
+			"opcoes_resposta": [360, 364, 365, 366]
+		},
+		{
+			"pergunta": "Quantos segundos há em um dia?",
+			"resposta_correta": 86400,
+			"opcoes_resposta": [80000, 86400, 90000, 100000]
+		}
+	]
+}

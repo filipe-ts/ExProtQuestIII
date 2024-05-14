@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpul7q1v2fji2"]
+
+[ext_resource type="Script" path="res://Scripts/cone.gd" id="1_26s1g"]
+[ext_resource type="Texture2D" uid="uid://lnqnsx4bdk7o" path="res://Assets/Asfalto/cone.png" id="2_jl8ys"]
+
+[node name="Cone" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_26s1g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(592, 450)
+texture = ExtResource("2_jl8ys")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(592, 450)
+polygon = PackedVector2Array(-13, 12, 13, 12, 13, 9, 9, 9, 2, -15, -2, -15, -9, 9, -13, 9)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
