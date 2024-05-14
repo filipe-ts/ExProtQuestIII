@@ -237,7 +237,9 @@ animations = [{
 }]
 
 [node name="JacksCar" type="CharacterBody2D"]
-position = Vector2(786, 489)
+position = Vector2(960, 864)
+collision_mask = 6
+motion_mode = 1
 script = ExtResource("1_bx8mc")
 
 [node name="JCAnimatedSprite" type="AnimatedSprite2D" parent="."]
@@ -260,7 +262,7 @@ script = ExtResource("53_fw7qa")
 
 [node name="JCAudioTires" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("55_66pys")
-volume_db = -15.0
+volume_db = -80.0
 max_polyphony = 2
 script = ExtResource("53_fw7qa")
 

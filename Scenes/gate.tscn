@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://de8drvbbydaoc"]
+
+[ext_resource type="Script" path="res://Scripts/gate.gd" id="1_3q461"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nyhn"]
+size = Vector2(192, 4)
+
+[node name="Gate" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_3q461")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6nyhn")
+debug_color = Color(0, 0.648578, 0.176081, 0.42)
