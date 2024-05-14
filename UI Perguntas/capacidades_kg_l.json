@@ -1,0 +1,54 @@
+{
+	"perguntas_capacidade": [
+		{
+			"pergunta": "Quantos copos de 200 ml são necessários para encher um litro de água?",
+			"resposta_correta": 5,
+			"opcoes_resposta": [4, 5, 6, 7]
+		},
+		{
+			"pergunta": "Se uma garrafa de refrigerante tem capacidade para 1 litro, quantas garrafas são necessárias para armazenar 3 litros?",
+			"resposta_correta": 3,
+			"opcoes_resposta": [1, 2, 3, 4]
+		},
+		{
+			"pergunta": "Se um balde tem capacidade para 5 litros, quantos litros ele terá quando estiver cheio?",
+			"resposta_correta": 5,
+			"opcoes_resposta": [3, 4, 5, 6]
+		},
+		{
+			"pergunta": "Se uma embalagem de suco tem capacidade para 500 ml, quantas embalagens são necessárias para 1 litro?",
+			"resposta_correta": 2,
+			"opcoes_resposta": [1, 2, 3, 4]
+		},
+		{
+			"pergunta": "Se uma sacola suporta 3 kg de batatas, quantos quilos de batatas podem ser colocados em 2 sacolas?",
+			"resposta_correta": 6,
+			"opcoes_resposta": [4, 5, 6, 7]
+		},
+		{
+			"pergunta": "Quantas garrafas de 250 ml são necessárias para encher um litro?",
+			"resposta_correta": 4,
+			"opcoes_resposta": [3, 4, 5, 6]
+		},
+		{
+			"pergunta": "Se uma jarra tem capacidade para 2 litros, quantos copos de 250 ml ela pode encher?",
+			"resposta_correta": 8,
+			"opcoes_resposta": [6, 7, 8, 9]
+		},
+		{
+			"pergunta": "Se uma caixa comporta 1 litro de leite, quantas caixas são necessárias para 3 litros?",
+			"resposta_correta": 3,
+			"opcoes_resposta": [2, 3, 4, 5]
+		},
+		{
+			"pergunta": "Quantos litros de água são necessários para encher um balde de 10 litros?",
+			"resposta_correta": 10,
+			"opcoes_resposta": [8, 9, 10, 11]
+		},
+		{
+			"pergunta": "Se uma garrafa tem capacidade para 750 ml, quantos litros ela pode armazenar?",
+			"resposta_correta": 0.75,
+			"opcoes_resposta": [0.5, 0.75, 1, 1.25]
+		}
+	]
+}
