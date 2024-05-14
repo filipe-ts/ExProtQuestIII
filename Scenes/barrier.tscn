@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ew62wxg02c1w"]
+[gd_scene load_steps=6 format=3 uid="uid://ew62wxg02c1w"]
 
 [ext_resource type="Texture2D" uid="uid://dwn1fydai4vl8" path="res://Assets/Barreira/barrier.png" id="1_0euit"]
 [ext_resource type="Script" path="res://Scripts/barrier.gd" id="2_sxbr4"]
+[ext_resource type="FontFile" uid="uid://dnd4p1n543wyh" path="res://Assets/Fonts/ethnocentric rg.otf" id="3_b8jsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyw3"]
 size = Vector2(190.667, 83.3333)
@@ -54,4 +55,67 @@ position = Vector2(475.333, 3.33333)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_bc3sd")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="GateA" type="Label" parent="."]
+offset_left = -437.0
+offset_top = -37.0
+offset_right = -327.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_b8jsw")
+theme_override_font_sizes/font_size = 33
+text = "AAA"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GateB" type="Label" parent="."]
+offset_left = -245.333
+offset_top = -34.6667
+offset_right = -135.333
+offset_bottom = 26.3333
+theme_override_fonts/font = ExtResource("3_b8jsw")
+theme_override_font_sizes/font_size = 33
+text = "BBB"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GateC" type="Label" parent="."]
+offset_left = -54.0
+offset_top = -37.0
+offset_right = 56.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_b8jsw")
+theme_override_font_sizes/font_size = 33
+text = "CCC"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GateD" type="Label" parent="."]
+offset_left = 136.0
+offset_top = -37.0
+offset_right = 246.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_b8jsw")
+theme_override_font_sizes/font_size = 33
+text = "DDD"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GateE" type="Label" parent="."]
+offset_left = 327.333
+offset_top = -37.3333
+offset_right = 437.333
+offset_bottom = 23.6667
+theme_override_fonts/font = ExtResource("3_b8jsw")
+theme_override_font_sizes/font_size = 33
+text = "EEE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="body_entered" from="GateOpener" to="." method="_on_gate_opener_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

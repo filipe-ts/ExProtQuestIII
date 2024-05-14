@@ -1,12 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvce0453n7xik"]
 
 [ext_resource type="PackedScene" uid="uid://b5sr0w2pa3iyy" path="res://Scenes/jacks_car.tscn" id="1_hvsda"]
-[ext_resource type="PackedScene" uid="uid://ew62wxg02c1w" path="res://Scenes/barrier.tscn" id="2_p81b8"]
+[ext_resource type="Script" path="res://Scripts/main_teste_v1.gd" id="1_pxtku"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_pxtku")
 
 [node name="JacksCar" parent="." instance=ExtResource("1_hvsda")]
 
-[node name="Barrier" parent="." instance=ExtResource("2_p81b8")]
-position = Vector2(929, 332)
-correct_gate_index = 3
+[node name="BarrierTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Barriers" type="Node2D" parent="."]
+
+[connection signal="timeout" from="BarrierTimer" to="." method="_on_barrier_timer_timeout"]

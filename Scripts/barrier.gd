@@ -2,6 +2,8 @@ extends Sprite2D
 
 class_name Barrier
 
+@onready var visible_on_screen_notifier_2d = $VisibleOnScreenNotifier2D
+
 const GATE_SCENE = preload("res://Scenes/gate.tscn")
 
 enum GATES {
@@ -28,12 +30,22 @@ enum GATE_POSITION{
 
 @export var correct_gate_index: GATES
 var correct_gate = null
+var answer = null
 
 
 @onready var gate_opener = $GateOpener
 
+@onready var gate_a = $GateA
+@onready var gate_b = $GateB
+@onready var gate_c = $GateC
+@onready var gate_d = $GateD
+@onready var gate_e = $GateE
+var gate_array = [gate_a, gate_b, gate_c, gate_d, gate_e]
+var gates_labels: Array
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_gates_labels(gates_labels)
 	for g in GATES:
 		var gate = GATE_SCENE.instantiate()
 		var gate_position = GATE_POSITION[g]
@@ -41,8 +53,8 @@ func _ready():
 		add_child(gate)
 		if GATES[g] == correct_gate_index:
 			correct_gate = gate
-			gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
 			gate_opener.position.x = gate.position.x
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,3 +68,17 @@ func _set_gate(gate: GATES):
 func _on_gate_opener_body_entered(body):
 	if body is JacksCar:
 		(correct_gate as Gate).set_collision_layer_value(2, false)
+		correct_gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	await get_tree().create_timer(3).timeout
+	queue_free()
+
+func set_gates_labels(opcoes: Array):
+	gate_array = [gate_a, gate_b, gate_c, gate_d, gate_e]
+	opcoes.shuffle()
+	for i in range(5):
+		(gate_array[i] as Label).text = str(opcoes[i])
+		if opcoes[i] == answer:
+			correct_gate_index = i
