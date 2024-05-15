@@ -35,6 +35,8 @@ var answer = null
 
 @onready var gate_opener = $GateOpener
 
+@onready var pergunta = $Pergunta
+
 @onready var gate_a = $GateA
 @onready var gate_b = $GateB
 @onready var gate_c = $GateC

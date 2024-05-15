@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cc1ev5ejjxtvq"]
 
 [ext_resource type="PackedScene" uid="uid://b5sr0w2pa3iyy" path="res://Scenes/jacks_car.tscn" id="1_e2rdk"]
-[ext_resource type="PackedScene" uid="uid://bpul7q1v2fji2" path="res://Scenes/cone.tscn" id="2_bu2sh"]
+[ext_resource type="PackedScene" uid="uid://bpul7q1v2fji2" path="res://Scenes/Scenes/cone.tscn" id="2_bu2sh"]
 
 [node name="main" type="Node"]
 

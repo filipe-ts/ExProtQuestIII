@@ -117,5 +117,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Pergunta" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.167
+offset_top = 114.0
+offset_right = -315.167
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(163, 37)
+theme_override_fonts/font = ExtResource("3_b8jsw")
+theme_override_font_sizes/font_size = 60
+text = "2 + 2 = ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="GateOpener" to="." method="_on_gate_opener_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
