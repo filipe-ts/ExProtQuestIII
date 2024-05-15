@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cplok1th5pd7t"]
 
-[ext_resource type="Script" path="res://Scripts/start_screen.gd" id="1_vl7pb"]
+[ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_vl7pb"]
 [ext_resource type="Texture2D" uid="uid://dpswuclmiy7k7" path="res://Assets/BGS/cyberpunk-street-files/Version 1/PNG/cyberpunk-street.png" id="2_cubpb"]
-[ext_resource type="FontFile" uid="uid://trppbprs86ch" path="res://Assets/Fonts/Cyborg Punk.ttf" id="2_eg27y"]
-[ext_resource type="FontFile" uid="uid://deujaxpcekt2y" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_6x4kh"]
+[ext_resource type="FontFile" uid="uid://rvng8iah0pwx" path="res://Assets/Fonts/Cyborg Punk.ttf" id="2_eg27y"]
+[ext_resource type="FontFile" uid="uid://bi3o4b1c12mju" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_6x4kh"]
 [ext_resource type="AudioStream" uid="uid://bg8qnqq88ktlm" path="res://Assets/SONS/music/cyberpunk-street.mp3" id="5_cuo6j"]
 
 [node name="Start_Screen" type="CanvasLayer"]
@@ -66,6 +66,12 @@ toggle_mode = true
 text = "modo infinito
 "
 
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6x4kh")
+theme_override_font_sizes/font_size = 48
+text = "Configurações"
+
 [node name="Label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
@@ -94,3 +100,4 @@ autoplay = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

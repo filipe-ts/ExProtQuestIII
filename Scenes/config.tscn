@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpkcbf27wc2dv"]
+
+[ext_resource type="Script" path="res://Scenes/config.gd" id="1_c33p3"]
+[ext_resource type="Texture2D" uid="uid://11li8uxd0i3w" path="res://Assets/BGS/Background/BGFree1.png" id="2_61b71"]
+[ext_resource type="FontFile" uid="uid://bi3o4b1c12mju" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_gdgtd"]
+[ext_resource type="FontFile" uid="uid://dhtdk3ap0d5ol" path="res://Assets/Fonts/ethnocentric rg.otf" id="4_dtn23"]
+[ext_resource type="AudioStream" uid="uid://bg8qnqq88ktlm" path="res://Assets/SONS/music/cyberpunk-street.mp3" id="5_c4888"]
+
+[node name="config" type="CanvasLayer"]
+script = ExtResource("1_c33p3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 1931.0
+offset_bottom = 1086.0
+texture = ExtResource("2_61b71")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 263.0
+offset_right = 57.0
+offset_bottom = 322.0
+theme_override_fonts/font = ExtResource("3_gdgtd")
+theme_override_font_sizes/font_size = 48
+text = "A"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 266.0
+offset_right = 320.0
+offset_bottom = 325.0
+theme_override_fonts/font = ExtResource("4_dtn23")
+theme_override_font_sizes/font_size = 48
+text = "MOVER PARA DIREITA"
+
+[node name="Label3" type="Label" parent="."]
+offset_top = 326.0
+offset_right = 54.0
+offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("3_gdgtd")
+theme_override_font_sizes/font_size = 48
+text = "D"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 328.0
+offset_right = 804.0
+offset_bottom = 387.0
+theme_override_fonts/font = ExtResource("4_dtn23")
+theme_override_font_sizes/font_size = 48
+text = "MOVER PARA ESQUERDA"
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 388.0
+offset_right = 53.0
+offset_bottom = 447.0
+theme_override_fonts/font = ExtResource("3_gdgtd")
+theme_override_font_sizes/font_size = 48
+text = "W"
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 394.0
+offset_right = 924.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("4_dtn23")
+theme_override_font_sizes/font_size = 48
+text = "MOVER PARA FRENTE"
+
+[node name="Label7" type="Label" parent="."]
+offset_top = 455.0
+offset_right = 60.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("3_gdgtd")
+theme_override_font_sizes/font_size = 48
+text = "S"
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 73.0
+offset_top = 458.0
+offset_right = 925.0
+offset_bottom = 517.0
+theme_override_fonts/font = ExtResource("4_dtn23")
+theme_override_font_sizes/font_size = 48
+text = "MOVER PARA tras"
+
+[node name="voltar" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 278.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("3_gdgtd")
+theme_override_font_sizes/font_size = 48
+text = "VOLTAR
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c4888")
+autoplay = true
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
