@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvce0453n7xik"]
+[gd_scene load_steps=6 format=3 uid="uid://dvce0453n7xik"]
 
 [ext_resource type="PackedScene" uid="uid://dj57afavcyocd" path="res://Scenes/jacks_car.tscn" id="1_hvsda"]
 [ext_resource type="Script" path="res://Scripts/main_teste_v1.gd" id="1_pxtku"]
 [ext_resource type="Script" path="res://Scripts/GeradorDePerguntas.gd" id="2_at5aa"]
+[ext_resource type="AudioStream" uid="uid://ul6uc61fnlxm" path="res://Assets/SONS/music/cybertruck-mood-maze-main-version-15624-02-20.mp3" id="4_yyfmc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw2by"]
 size = Vector2(1916, 61)
@@ -39,6 +40,10 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierDetecter"]
 position = Vector2(0, 297.5)
 shape = SubResource("RectangleShape2D_mw2by")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yyfmc")
+autoplay = true
 
 [connection signal="timeout" from="ConesTimer" to="." method="_on_cones_timer_timeout"]
 [connection signal="timeout" from="BarrierTimer" to="." method="_on_barrier_timer_timeout"]
