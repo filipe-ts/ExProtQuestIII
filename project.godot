@@ -60,3 +60,5 @@ action={
 2d_physics/layer_1="jack"
 2d_physics/layer_2="gate"
 2d_physics/layer_3="walls"
+2d_physics/layer_4="barrier_detector"
+2d_physics/layer_5="barrier"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b5sr0w2pa3iyy"]
+[gd_scene load_steps=59 format=3 uid="uid://dj57afavcyocd"]
 
 [ext_resource type="Script" path="res://Scripts/jacks_car.gd" id="1_bx8mc"]
 [ext_resource type="Texture2D" uid="uid://ctx28cnix7xpy" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_000.png" id="1_cn2oy"]
@@ -52,6 +52,11 @@
 [ext_resource type="Texture2D" uid="uid://c5t0xx52wqyet" path="res://Assets/SUPERCAR TOPDOWN/Magenta/SEPARATED/Magenta_SUPERCAR_CLEAN_All_042.png" id="49_668pq"]
 [ext_resource type="Script" path="res://Scripts/JCAnimatedSprite.gd" id="51_7vomq"]
 [ext_resource type="Script" path="res://Scripts/JCCollision.gd" id="52_nwmng"]
+[ext_resource type="Script" path="res://Scripts/JCAudio.gd" id="53_fw7qa"]
+[ext_resource type="AudioStream" uid="uid://c46l53uwqoj4u" path="res://Assets/SONS/Game/mustang_engine_mixdown.wav" id="53_v4mrf"]
+[ext_resource type="AudioStream" uid="uid://dmelllwt3qcnd" path="res://Assets/SONS/Game/tires_mixdown.wav" id="55_66pys"]
+[ext_resource type="AudioStream" uid="uid://bxq5vqoauf3rr" path="res://Assets/SONS/Game/skid_mixdown.wav" id="56_a0i3y"]
+[ext_resource type="Script" path="res://Scripts/JCAudioTurn.gd" id="57_0toft"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8v7mt"]
 animations = [{
@@ -268,3 +273,6 @@ max_polyphony = 2
 script = ExtResource("57_0toft")
 
 [connection signal="animation_finished" from="JCAnimatedSprite" to="JCAnimatedSprite" method="_on_animation_finished"]
+[connection signal="finished" from="JCAudio" to="JCAudio" method="_on_finished"]
+[connection signal="finished" from="JCAudioTires" to="JCAudioTires" method="_on_finished"]
+[connection signal="finished" from="JCAudioTurn" to="JCAudioTurn" method="_on_finished"]

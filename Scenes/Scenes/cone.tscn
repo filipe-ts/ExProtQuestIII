@@ -8,13 +8,13 @@ collision_layer = 2
 script = ExtResource("1_26s1g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(592, 450)
+position = Vector2(-0.200001, -3.9)
 texture = ExtResource("2_jl8ys")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(592, 450)
+position = Vector2(-0.200001, -3.9)
 polygon = PackedVector2Array(-13, 12, 13, 12, 13, 9, 9, 9, 2, -15, -2, -15, -9, 9, -13, 9)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

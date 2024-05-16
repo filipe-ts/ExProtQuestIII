@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_vl7pb"]
 [ext_resource type="Texture2D" uid="uid://dpswuclmiy7k7" path="res://Assets/BGS/cyberpunk-street-files/Version 1/PNG/cyberpunk-street.png" id="2_cubpb"]
-[ext_resource type="FontFile" uid="uid://rvng8iah0pwx" path="res://Assets/Fonts/Cyborg Punk.ttf" id="2_eg27y"]
-[ext_resource type="FontFile" uid="uid://bi3o4b1c12mju" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_6x4kh"]
+[ext_resource type="FontFile" uid="uid://trppbprs86ch" path="res://Assets/Fonts/Cyborg Punk.ttf" id="2_eg27y"]
+[ext_resource type="FontFile" uid="uid://deujaxpcekt2y" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_6x4kh"]
 [ext_resource type="AudioStream" uid="uid://bg8qnqq88ktlm" path="res://Assets/SONS/music/cyberpunk-street.mp3" id="5_cuo6j"]
 
 [node name="Start_Screen" type="CanvasLayer"]
