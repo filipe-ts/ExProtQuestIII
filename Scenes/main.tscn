@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvce0453n7xik"]
+[gd_scene load_steps=4 format=3 uid="uid://dvce0453n7xik"]
 
 [ext_resource type="PackedScene" uid="uid://b5sr0w2pa3iyy" path="res://Scenes/jacks_car.tscn" id="1_hvsda"]
+[ext_resource type="Script" path="res://Scripts/main_teste_v1.gd" id="1_pxtku"]
+[ext_resource type="Script" path="res://Scripts/GeradorDePerguntas.gd" id="2_at5aa"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_pxtku")
+
+[node name="GeradorDePerguntas" type="Node2D" parent="."]
+script = ExtResource("2_at5aa")
 
 [node name="JacksCar" parent="." instance=ExtResource("1_hvsda")]
+
+[node name="BarrierTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Barriers" type="Node2D" parent="."]
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 149.0
+offset_bottom = 32.0
+
+[connection signal="timeout" from="BarrierTimer" to="." method="_on_barrier_timer_timeout"]

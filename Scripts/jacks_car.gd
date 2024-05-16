@@ -18,5 +18,10 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION_SPEED)
+	#direction = Input.get_axis("up", "down")
+	#if direction:
+		#velocity.y = direction * SPEED
+	#else:
+		#velocity.y = move_toward(velocity.y, 0, FRICTION_SPEED)
 
 	move_and_slide()
