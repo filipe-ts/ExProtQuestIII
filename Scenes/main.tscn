@@ -17,7 +17,7 @@ script = ExtResource("2_at5aa")
 [node name="JacksCar" parent="." instance=ExtResource("1_hvsda")]
 
 [node name="ConesTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.1
 
 [node name="BarrierTimer" type="Timer" parent="."]
 wait_time = 5.0

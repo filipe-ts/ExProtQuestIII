@@ -4,6 +4,7 @@ extends Node2D
 var left_interval_bound = 1
 var righ_interval_bound = 100
 var righ_interval_bound_easy = 20
+var right_interval_multiplication = 10
 
 # Lista de operações matemáticas
 var operacoes_2 = ["+", "-", "*"]
@@ -47,8 +48,9 @@ func gerar_pergunta_aleatoria():
 				resposta_correta = numero1 - numero2
 				pergunta = str(numero1) + " - " + str(numero2)
 			"*" :
-				while numero2 > 10:  # evitar multiplicações muito grandes
-					numero2 = randi_range(left_interval_bound, 10)
+				while numero2 > 10 and numero1 > 10:  # evitar multiplicações muito grandes
+					numero1 = randi_range(left_interval_bound, right_interval_multiplication)
+					numero2 = randi_range(left_interval_bound, right_interval_multiplication)
 					print("while 2")
 				resposta_correta = numero1 * numero2
 				pergunta = str(numero1) + " * " + str(numero2)

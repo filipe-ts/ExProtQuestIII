@@ -17,9 +17,10 @@ var can_spawn_cone = true
 var is_barrier_moveble = false
 var is_cone_movable = false
 
-var limit_obstcles_velocity_y = 2
-@export var obstcles_velocity_y = 1
-var max_obstcles_velocity_y = 1
+var min_obstacle_velocity = 2
+var limit_obstcles_velocity_y = 10
+@export var obstcles_velocity_y = 5
+var max_obstcles_velocity_y = 5
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,12 +35,12 @@ func _process(delta):
 	var debug_label_text = str(obstcles_velocity_y) + "  " + str(max_obstcles_velocity_y)
 	debug_label.text = debug_label_text
 	
-	if Input.is_action_pressed("down") and obstcles_velocity_y > 0.5:
-		obstcles_velocity_y -= 0.002
-	elif Input.is_action_pressed("down") and obstcles_velocity_y <= 0.5:
-		obstcles_velocity_y = 0.5
+	if Input.is_action_pressed("down") and obstcles_velocity_y > min_obstacle_velocity :
+		obstcles_velocity_y -= 0.2
+	elif Input.is_action_pressed("down") and obstcles_velocity_y <= min_obstacle_velocity:
+		obstcles_velocity_y =  min_obstacle_velocity
 	elif !Input.is_action_pressed("down") and obstcles_velocity_y < max_obstcles_velocity_y:
-		obstcles_velocity_y += 0.02
+		obstcles_velocity_y += 0.5
 	elif !Input.is_action_pressed("down") and obstcles_velocity_y >= max_obstcles_velocity_y:
 		obstcles_velocity_y = max_obstcles_velocity_y
 	
@@ -73,7 +74,7 @@ func _on_barrier_timer_timeout():
 	barrier_timer.wait_time = new_time_duration
 	
 	if max_obstcles_velocity_y < limit_obstcles_velocity_y:
-		max_obstcles_velocity_y += 0.02
+		max_obstcles_velocity_y += 0.5
 	else:
 		max_obstcles_velocity_y = limit_obstcles_velocity_y
 		
