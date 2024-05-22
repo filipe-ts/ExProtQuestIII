@@ -20,7 +20,7 @@ var barrier = barrier_scene.instantiate()
 @onready var debug_label = $DebugLabel
 
 
-var can_spawn_cone = true
+var can_spawn_cone = false
 var is_barrier_moveble = false
 var is_cone_movable = false
 
@@ -40,7 +40,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var debug_label_text = str(obstcles_velocity_y) + "  " + str(max_obstcles_velocity_y)
+	var debug_label_text = str(obstcles_velocity_y) + "  " + str(max_obstcles_velocity_y) + " " + str(cones_timer.wait_time)
 	debug_label.text = debug_label_text
 	
 	if Input.is_action_pressed("down") and obstcles_velocity_y > min_obstacle_velocity :
@@ -87,11 +87,6 @@ func _on_barrier_timer_timeout():
 	gerador_de_perguntas.gerar_pergunta_aleatoria()
 	barrier_timer.wait_time = new_time_duration
 	
-	if max_obstcles_velocity_y < limit_obstcles_velocity_y:
-		max_obstcles_velocity_y += 0.5
-	else:
-		max_obstcles_velocity_y = limit_obstcles_velocity_y
-		
 	barrier_timer.start()
 
 func allow_barrier_to_move():
@@ -123,3 +118,14 @@ func _on_barrier_detecter_area_exited(area):
 	if area is BarrierArea:
 		can_spawn_cone = true
 		print("can_cone")
+
+
+func _on_punish_timer_timeout():
+	if Input.is_action_pressed("down") and max_obstcles_velocity_y > min_obstacle_velocity:
+		get_tree().call_group("GameHud", "change_score", -1)
+		
+func _increase_obstacle_speed():
+	if max_obstcles_velocity_y < limit_obstcles_velocity_y:
+		max_obstcles_velocity_y += 0.5
+	else:
+		max_obstcles_velocity_y = limit_obstcles_velocity_y

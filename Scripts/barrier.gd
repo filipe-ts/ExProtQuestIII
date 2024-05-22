@@ -72,7 +72,10 @@ func _on_gate_opener_body_entered(body):
 	if body is JacksCar:
 		(correct_gate as Gate).set_collision_layer_value(2, false)
 		correct_gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
+		await get_tree().create_timer(1).timeout
 		get_tree().call_group("GameHud", "change_score", points)
+		get_tree().call_group("Main", "_increase_obstacle_speed")
+		get_tree().call_group("ConesTimer", "_decresed_timer")
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
