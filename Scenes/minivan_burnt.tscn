@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqlq6uufhwyjx"]
+
+[ext_resource type="Texture2D" uid="uid://ng8uibr7r5bm" path="res://Assets/Wreckage/Burnt/Minivan/MINIVAN_Burnt_000.png" id="1_84ssd"]
+[ext_resource type="Script" path="res://Scripts/minivan_burnt.gd" id="1_lxrej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br7me"]
+size = Vector2(110, 52)
+
+[node name="minivan_burnt" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_lxrej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(289, 232)
+shape = SubResource("RectangleShape2D_br7me")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(284, 231)
+texture = ExtResource("1_84ssd")

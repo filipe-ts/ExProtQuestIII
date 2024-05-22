@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxl58xcpyixtn"]
+
+[ext_resource type="Script" path="res://Scripts/van_wreck.gd" id="1_5ecj8"]
+[ext_resource type="Texture2D" uid="uid://ct5mnu24ylkxr" path="res://Assets/Wreckage/Abandoned/Van/Magenta/Magenta_VAN_Wreck_000.png" id="2_v2t65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3go6c"]
+size = Vector2(110, 54)
+
+[node name="van_wreck" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_5ecj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(597, 243)
+shape = SubResource("RectangleShape2D_3go6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(596, 244)
+texture = ExtResource("2_v2t65")
