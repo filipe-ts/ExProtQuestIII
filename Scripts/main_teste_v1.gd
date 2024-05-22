@@ -8,6 +8,7 @@ var cone = cone_scene.instantiate()
 var barrier_scene = preload("res://Scenes/barrier.tscn")
 var barrier = barrier_scene.instantiate()
 
+@onready var jacks_car = $JacksCar
 @onready var cones_timer = $ConesTimer
 @onready var barrier_timer = $BarrierTimer
 @onready var gerador_de_perguntas = $GeradorDePerguntas
@@ -19,8 +20,9 @@ var is_cone_movable = false
 
 var min_obstacle_velocity = 2
 var limit_obstcles_velocity_y = 10
-@export var obstcles_velocity_y = 5
-var max_obstcles_velocity_y = 5
+@export var obstcles_velocity_y = 2
+@export var barrier_velocity_y = 2
+var max_obstcles_velocity_y = 2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -45,7 +47,7 @@ func _process(delta):
 		obstcles_velocity_y = max_obstcles_velocity_y
 	
 	if is_barrier_moveble:
-		barriers.position.y += obstcles_velocity_y
+		barriers.position.y += barrier_velocity_y
 	if is_cone_movable:
 		cones.position.y += obstcles_velocity_y
 
@@ -57,11 +59,11 @@ func _on_barrier_timer_timeout():
 	barrier = barrier_scene.instantiate()
 	barrier.answer = resposta
 	barrier.gates_labels = opcoes
-	
+	barrier.points = gerador_de_perguntas.pergunta_atual["pontos"]
 	
 	barriers.add_child(barrier)
 	barrier.pergunta.text = gerador_de_perguntas.pergunta_atual["pergunta"]
-	barrier.global_position = Vector2(1920/2, -1500)
+	barrier.global_position = Vector2(1920/2, -2000)
 	
 	is_barrier_moveble = true
 	
@@ -90,8 +92,12 @@ func _on_cones_timer_timeout():
 		cone = cone_scene.instantiate()
 		cones.add_child(cone)
 		randomize()
-		cone.global_position = Vector2(randi_range(50, 1920-50), -10)
-		
+		#cone.global_position = Vector2(randi_range(50, 1920-50), -10)
+		var random_x = round(randfn(jacks_car.position.x, 1920/5))
+		while random_x < 254 or random_x > 1686:
+			randomize()
+			random_x = round(randfn(jacks_car.position.x, 1920/5))
+		cone.global_position = Vector2(random_x, -10)
 	
 
 

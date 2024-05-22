@@ -31,6 +31,7 @@ enum GATE_POSITION{
 @export var correct_gate_index: GATES
 var correct_gate = null
 var answer = null
+var points = 100
 
 
 @onready var gate_opener = $GateOpener
@@ -71,6 +72,7 @@ func _on_gate_opener_body_entered(body):
 	if body is JacksCar:
 		(correct_gate as Gate).set_collision_layer_value(2, false)
 		correct_gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
+		get_tree().call_group("GameHud", "change_score", points)
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

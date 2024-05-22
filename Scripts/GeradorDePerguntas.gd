@@ -5,9 +5,10 @@ var left_interval_bound = 1
 var righ_interval_bound = 100
 var righ_interval_bound_easy = 20
 var right_interval_multiplication = 10
+var points = 100
 
 # Lista de operações matemáticas
-var operacoes_2 = ["+", "-", "*"]
+var operacoes_2 = ["+", "-", "*", "*"]
 var operacoes_3 = ["+", "-"]
 
 # Dicionário para armazenar a pergunta atual
@@ -30,7 +31,9 @@ func gerar_pergunta_aleatoria():
 	var resposta_correta
 	var pergunta
 	var opcoes = []
+	randomize()
 	if randi_range(1, 2) == 1: # Se for 2 tipos de operações
+		randomize()
 		operacao = operacoes_2[randi() % operacoes_2.size()]
 		numero1 = randi_range(left_interval_bound, righ_interval_bound)
 		numero2 = randi_range(left_interval_bound, righ_interval_bound)
@@ -39,23 +42,31 @@ func gerar_pergunta_aleatoria():
 			"+" :
 				resposta_correta = numero1 + numero2
 				pergunta = str(numero1) + " + " + str(numero2)
+				if numero1 > 20 and numero2 > 20:
+					points = 200
 			"-" :
 				while numero1 < numero2:  # número 1 sempre maior que número 2, para não
 				# termos números negativos na resposta
+					randomize()
 					numero1 = randi_range(numero2-1, righ_interval_bound)
 					print("while 1")
 					
 				resposta_correta = numero1 - numero2
 				pergunta = str(numero1) + " - " + str(numero2)
+				if numero1 > 20 and numero2 > 20:
+						points = 200
 			"*" :
-				while numero2 > 10 and numero1 > 10:  # evitar multiplicações muito grandes
+				while numero2 > 10 or numero1 > 10:  # evitar multiplicações muito grandes
+					randomize()
 					numero1 = randi_range(left_interval_bound, right_interval_multiplication)
 					numero2 = randi_range(left_interval_bound, right_interval_multiplication)
 					print("while 2")
 				resposta_correta = numero1 * numero2
 				pergunta = str(numero1) + " * " + str(numero2)
 	else: # Se for 3 tipos de operações
+		randomize()
 		operacao = operacoes_3[randi() % operacoes_3.size()]
+		randomize()
 		numero1 = randi_range(left_interval_bound, righ_interval_bound_easy)
 		numero2 = randi_range(left_interval_bound, righ_interval_bound_easy)
 		numero3 = randi_range(left_interval_bound, righ_interval_bound_easy)
@@ -66,6 +77,7 @@ func gerar_pergunta_aleatoria():
 			"-" :
 				while numero1 < (numero2 + numero3):  # número 1 sempre maior que a soma dos demias, para não
 				# termos números negativos na resposta
+					randomize()
 					numero1 = randi_range(left_interval_bound, righ_interval_bound)
 					numero2 = randi_range(left_interval_bound, 5)
 					numero3 = randi_range(left_interval_bound, 10)
@@ -96,5 +108,8 @@ func gerar_pergunta_aleatoria():
 	pergunta_atual = {
 		"resposta_correta": resposta_correta,
 		"opcoes": opcoes,
-		"pergunta": pergunta
+		"pergunta": pergunta,
+		"pontos": points
 	}
+	
+	points = 100 #reset poinst value

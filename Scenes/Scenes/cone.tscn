@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpul7q1v2fji2"]
+[gd_scene load_steps=4 format=3 uid="uid://bpul7q1v2fji2"]
 
 [ext_resource type="Script" path="res://Scripts/cone.gd" id="1_26s1g"]
 [ext_resource type="Texture2D" uid="uid://lnqnsx4bdk7o" path="res://Assets/Asfalto/cone.png" id="2_jl8ys"]
+[ext_resource type="AudioStream" uid="uid://b02eo38cbd4an" path="res://Assets/SONS/Game/Drop_Mine.wav" id="3_o364w"]
 
 [node name="Cone" type="Area2D"]
 collision_layer = 2
@@ -17,4 +18,10 @@ visibility_layer = 2
 position = Vector2(-0.200001, -3.9)
 polygon = PackedVector2Array(-13, 12, 13, 12, 13, 9, 9, 9, 2, -15, -2, -15, -9, 9, -13, 9)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o364w")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

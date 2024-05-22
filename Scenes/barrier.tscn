@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/BarrierArea.gd" id="3_pdul4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lvg1"]
-size = Vector2(981.333, 578)
+size = Vector2(981.333, 1950)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyw3"]
 size = Vector2(190.667, 83.3333)
@@ -27,7 +27,7 @@ collision_mask = 9
 script = ExtResource("3_pdul4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarrierArea"]
-position = Vector2(0, 39.6667)
+position = Vector2(0, -646.333)
 shape = SubResource("RectangleShape2D_6lvg1")
 
 [node name="GateOpener" type="Area2D" parent="."]
@@ -143,9 +143,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -640.167
-offset_top = 710.667
+offset_top = 1212.0
 offset_right = -315.167
-offset_bottom = 783.667
+offset_bottom = 1285.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(163, 37)

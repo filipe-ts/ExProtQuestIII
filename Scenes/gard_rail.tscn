@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp6q5pfja35vi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ilfy"]
+size = Vector2(17, 1080)
+
+[node name="GardRail" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 540)
+shape = SubResource("RectangleShape2D_2ilfy")

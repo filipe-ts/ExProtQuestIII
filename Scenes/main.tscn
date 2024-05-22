@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvce0453n7xik"]
+[gd_scene load_steps=8 format=3 uid="uid://dvce0453n7xik"]
 
 [ext_resource type="PackedScene" uid="uid://dj57afavcyocd" path="res://Scenes/jacks_car.tscn" id="1_hvsda"]
 [ext_resource type="Script" path="res://Scripts/main_teste_v1.gd" id="1_pxtku"]
 [ext_resource type="Script" path="res://Scripts/GeradorDePerguntas.gd" id="2_at5aa"]
 [ext_resource type="AudioStream" uid="uid://ul6uc61fnlxm" path="res://Assets/SONS/music/cybertruck-mood-maze-main-version-15624-02-20.mp3" id="4_yyfmc"]
+[ext_resource type="PackedScene" uid="uid://dp6q5pfja35vi" path="res://Scenes/gard_rail.tscn" id="5_63qe8"]
+[ext_resource type="PackedScene" uid="uid://d0w7luyondgmy" path="res://Scenes/game_hud.tscn" id="6_u0311"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw2by"]
 size = Vector2(1916, 61)
@@ -11,26 +13,11 @@ size = Vector2(1916, 61)
 [node name="Main" type="Node"]
 script = ExtResource("1_pxtku")
 
-[node name="GeradorDePerguntas" type="Node2D" parent="."]
-script = ExtResource("2_at5aa")
-
-[node name="JacksCar" parent="." instance=ExtResource("1_hvsda")]
-
 [node name="ConesTimer" type="Timer" parent="."]
 wait_time = 0.1
 
 [node name="BarrierTimer" type="Timer" parent="."]
 wait_time = 5.0
-
-[node name="Barriers" type="Node2D" parent="."]
-
-[node name="Cones" type="Node2D" parent="."]
-
-[node name="DebugLabel" type="Label" parent="."]
-offset_left = 12.0
-offset_top = 9.0
-offset_right = 149.0
-offset_bottom = 32.0
 
 [node name="BarrierDetecter" type="Area2D" parent="."]
 position = Vector2(960, -336)
@@ -41,9 +28,34 @@ collision_mask = 16
 position = Vector2(0, 297.5)
 shape = SubResource("RectangleShape2D_mw2by")
 
+[node name="GeradorDePerguntas" type="Node2D" parent="."]
+script = ExtResource("2_at5aa")
+
+[node name="GardRailRight" parent="." instance=ExtResource("5_63qe8")]
+position = Vector2(1696, 0)
+
+[node name="GardRailLeft" parent="." instance=ExtResource("5_63qe8")]
+position = Vector2(224, 0)
+
+[node name="Cones" type="Node2D" parent="."]
+
+[node name="JacksCar" parent="." instance=ExtResource("1_hvsda")]
+
+[node name="Barriers" type="Node2D" parent="."]
+
+[node name="DebugLabel" type="Label" parent="."]
+visible = false
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 149.0
+offset_bottom = 32.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yyfmc")
+volume_db = -15.0
 autoplay = true
+
+[node name="GameHud" parent="." instance=ExtResource("6_u0311")]
 
 [connection signal="timeout" from="ConesTimer" to="." method="_on_cones_timer_timeout"]
 [connection signal="timeout" from="BarrierTimer" to="." method="_on_barrier_timer_timeout"]
