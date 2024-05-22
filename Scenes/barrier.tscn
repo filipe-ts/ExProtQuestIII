@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ew62wxg02c1w"]
 
-[ext_resource type="Texture2D" uid="uid://dwn1fydai4vl8" path="res://Assets/Barreira/barrier.png" id="1_0euit"]
+[ext_resource type="Texture2D" uid="uid://cgfwpx4mitwqj" path="res://Assets/Barreira/barrier_v2.png" id="1_48nge"]
 [ext_resource type="Script" path="res://Scripts/barrier.gd" id="2_sxbr4"]
 [ext_resource type="FontFile" uid="uid://dnd4p1n543wyh" path="res://Assets/Fonts/ethnocentric rg.otf" id="3_b8jsw"]
 [ext_resource type="Script" path="res://Scripts/BarrierArea.gd" id="3_pdul4"]
@@ -12,13 +12,13 @@ size = Vector2(981.333, 1950)
 size = Vector2(190.667, 83.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc3sd"]
-size = Vector2(2.7778, 70)
+size = Vector2(4.44443, 104.889)
 
 [node name="Barrier" type="Sprite2D"]
 texture_filter = 1
 position = Vector2(0, -483)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_0euit")
+texture = ExtResource("1_48nge")
 script = ExtResource("2_sxbr4")
 
 [node name="BarrierArea" type="Area2D" parent="."]
@@ -45,7 +45,7 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_bc3sd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-286, 3.33333)
+position = Vector2(-286, 3.33331)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_bc3sd")
 
@@ -70,6 +70,11 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_bc3sd")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="GateHolder" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_48nge")
 
 [node name="GateA" type="Label" parent="."]
 offset_left = -437.0
@@ -142,10 +147,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.167
-offset_top = 1212.0
-offset_right = -315.167
-offset_bottom = 1285.0
+offset_left = -1123.33
+offset_top = 732.667
+offset_right = -798.333
+offset_bottom = 805.667
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(163, 37)
