@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvce0453n7xik"]
+[gd_scene load_steps=10 format=3 uid="uid://dvce0453n7xik"]
 
 [ext_resource type="PackedScene" uid="uid://dj57afavcyocd" path="res://Scenes/jacks_car.tscn" id="1_hvsda"]
 [ext_resource type="Script" path="res://Scripts/main_teste_v1.gd" id="1_pxtku"]
 [ext_resource type="Script" path="res://Scripts/GeradorDePerguntas.gd" id="2_at5aa"]
 [ext_resource type="PackedScene" uid="uid://b7hxx77l51dlp" path="res://Scenes/road_sprite.tscn" id="2_e223o"]
+[ext_resource type="Script" path="res://Scripts/ConesTimer.gd" id="3_qu456"]
 [ext_resource type="AudioStream" uid="uid://ul6uc61fnlxm" path="res://Assets/SONS/music/cybertruck-mood-maze-main-version-15624-02-20.mp3" id="4_yyfmc"]
 [ext_resource type="PackedScene" uid="uid://dp6q5pfja35vi" path="res://Scenes/gard_rail.tscn" id="5_63qe8"]
 [ext_resource type="PackedScene" uid="uid://d0w7luyondgmy" path="res://Scenes/game_hud.tscn" id="6_u0311"]
@@ -11,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw2by"]
 size = Vector2(1916, 61)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["Main"]]
 script = ExtResource("1_pxtku")
 
 [node name="RoadGenator" type="Node2D" parent="."]
@@ -21,11 +22,16 @@ script = ExtResource("1_pxtku")
 [node name="RoadSprite2" parent="RoadGenator" instance=ExtResource("2_e223o")]
 position = Vector2(960, -2604)
 
-[node name="ConesTimer" type="Timer" parent="."]
-wait_time = 0.1
+[node name="ConesTimer" type="Timer" parent="." groups=["ConesTimer"]]
+wait_time = 0.2
+script = ExtResource("3_qu456")
 
 [node name="BarrierTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="PunishTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
 
 [node name="BarrierDetecter" type="Area2D" parent="."]
 position = Vector2(960, -336)
@@ -52,11 +58,10 @@ position = Vector2(224, 0)
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="DebugLabel" type="Label" parent="."]
-visible = false
-offset_left = 12.0
-offset_top = 9.0
-offset_right = 149.0
-offset_bottom = 32.0
+offset_left = 22.0
+offset_top = 134.0
+offset_right = 159.0
+offset_bottom = 157.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yyfmc")
@@ -67,5 +72,6 @@ autoplay = true
 
 [connection signal="timeout" from="ConesTimer" to="." method="_on_cones_timer_timeout"]
 [connection signal="timeout" from="BarrierTimer" to="." method="_on_barrier_timer_timeout"]
+[connection signal="timeout" from="PunishTimer" to="." method="_on_punish_timer_timeout"]
 [connection signal="area_entered" from="BarrierDetecter" to="." method="_on_barrier_detecter_area_entered"]
 [connection signal="area_exited" from="BarrierDetecter" to="." method="_on_barrier_detecter_area_exited"]

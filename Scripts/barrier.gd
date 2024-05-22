@@ -16,7 +16,7 @@ enum GATES {
 
 const FRIST_GATE_POSITION_X = 96
 const POSITION_X_ADJUST = 96*5
-const GATE_POSITION_Y = 56
+const GATE_POSITION_Y = 56 + 36
 
 enum GATE_POSITION{
 	A = FRIST_GATE_POSITION_X - POSITION_X_ADJUST,
@@ -35,8 +35,11 @@ var points = 100
 
 
 @onready var gate_opener = $GateOpener
+@onready var gate_holder = $GateHolder
 
 @onready var pergunta = $Pergunta
+
+
 
 @onready var gate_a = $GateA
 @onready var gate_b = $GateB
@@ -53,7 +56,7 @@ func _ready():
 		var gate = GATE_SCENE.instantiate()
 		var gate_position = GATE_POSITION[g]
 		gate.position = Vector2(gate_position, GATE_POSITION_Y)
-		add_child(gate)
+		gate_holder.add_child(gate)
 		if GATES[g] == correct_gate_index:
 			correct_gate = gate
 			gate_opener.position.x = gate.position.x
@@ -72,7 +75,11 @@ func _on_gate_opener_body_entered(body):
 	if body is JacksCar:
 		(correct_gate as Gate).set_collision_layer_value(2, false)
 		correct_gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
+		(correct_gate as Gate).animated_sprite_2d.play("open", 1.4)
+		await get_tree().create_timer(1).timeout
 		get_tree().call_group("GameHud", "change_score", points)
+		get_tree().call_group("Main", "_increase_obstacle_speed")
+		get_tree().call_group("ConesTimer", "_decresed_timer")
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
