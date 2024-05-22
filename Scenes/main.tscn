@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvce0453n7xik"]
+[gd_scene load_steps=9 format=3 uid="uid://dvce0453n7xik"]
 
 [ext_resource type="PackedScene" uid="uid://dj57afavcyocd" path="res://Scenes/jacks_car.tscn" id="1_hvsda"]
 [ext_resource type="Script" path="res://Scripts/main_teste_v1.gd" id="1_pxtku"]
 [ext_resource type="Script" path="res://Scripts/GeradorDePerguntas.gd" id="2_at5aa"]
+[ext_resource type="PackedScene" uid="uid://b7hxx77l51dlp" path="res://Scenes/road_sprite.tscn" id="2_e223o"]
 [ext_resource type="AudioStream" uid="uid://ul6uc61fnlxm" path="res://Assets/SONS/music/cybertruck-mood-maze-main-version-15624-02-20.mp3" id="4_yyfmc"]
 [ext_resource type="PackedScene" uid="uid://dp6q5pfja35vi" path="res://Scenes/gard_rail.tscn" id="5_63qe8"]
 [ext_resource type="PackedScene" uid="uid://d0w7luyondgmy" path="res://Scenes/game_hud.tscn" id="6_u0311"]
@@ -12,6 +13,13 @@ size = Vector2(1916, 61)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_pxtku")
+
+[node name="RoadGenator" type="Node2D" parent="."]
+
+[node name="RoadSprite" parent="RoadGenator" instance=ExtResource("2_e223o")]
+
+[node name="RoadSprite2" parent="RoadGenator" instance=ExtResource("2_e223o")]
+position = Vector2(960, -2604)
 
 [node name="ConesTimer" type="Timer" parent="."]
 wait_time = 0.1

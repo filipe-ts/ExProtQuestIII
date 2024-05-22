@@ -7,6 +7,11 @@ var cone = cone_scene.instantiate()
 @onready var barriers = $Barriers
 var barrier_scene = preload("res://Scenes/barrier.tscn")
 var barrier = barrier_scene.instantiate()
+@onready var road_genator = $RoadGenator
+@onready var road_sprite_front = $RoadGenator/RoadSprite
+@onready var road_sprite_back = $RoadGenator/RoadSprite2
+
+
 
 @onready var jacks_car = $JacksCar
 @onready var cones_timer = $ConesTimer
@@ -14,12 +19,13 @@ var barrier = barrier_scene.instantiate()
 @onready var gerador_de_perguntas = $GeradorDePerguntas
 @onready var debug_label = $DebugLabel
 
+
 var can_spawn_cone = true
 var is_barrier_moveble = false
 var is_cone_movable = false
 
 var min_obstacle_velocity = 2
-var limit_obstcles_velocity_y = 10
+var limit_obstcles_velocity_y = 8
 @export var obstcles_velocity_y = 2
 @export var barrier_velocity_y = 2
 var max_obstcles_velocity_y = 2
@@ -50,6 +56,12 @@ func _process(delta):
 		barriers.position.y += barrier_velocity_y
 	if is_cone_movable:
 		cones.position.y += obstcles_velocity_y
+		
+	road_genator.position.y += obstcles_velocity_y
+	
+	if road_sprite_back.global_position.y >= -148:
+		road_genator.position.y = 0
+		
 
 
 func _on_barrier_timer_timeout():

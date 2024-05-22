@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7hxx77l51dlp"]
+
+[ext_resource type="Texture2D" uid="uid://cccun7o88ka2r" path="res://Assets/Road/Road.jpg" id="1_u58dx"]
+[ext_resource type="Script" path="res://Scripts/road_sprite.gd" id="61_2vwsr"]
+
+[node name="RoadSprite" type="Sprite2D"]
+position = Vector2(960, -148)
+texture = ExtResource("1_u58dx")
+script = ExtResource("61_2vwsr")
