@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 func _decresed_timer():
-	if wait_time > 0.05:
-		wait_time -= 0.0125
+	if wait_time > 0.08:
+		wait_time -= 0.015

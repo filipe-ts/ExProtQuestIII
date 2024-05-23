@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
-var points = -20
+var points = -10
 
 signal hit
 
