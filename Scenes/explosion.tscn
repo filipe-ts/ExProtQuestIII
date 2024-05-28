@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://daf32fgmbg8ed"]
+
+[ext_resource type="Texture2D" uid="uid://ct1ieb2wdwrg6" path="res://Assets/Explosion/PNG/Explosion/explosion00.png" id="1_mrt7t"]
+[ext_resource type="Texture2D" uid="uid://bpt3760l41352" path="res://Assets/Explosion/PNG/Explosion/explosion01.png" id="2_p6kao"]
+[ext_resource type="Texture2D" uid="uid://cvr00jysb6h73" path="res://Assets/Explosion/PNG/Explosion/explosion02.png" id="3_po07c"]
+[ext_resource type="Texture2D" uid="uid://cfvqwhgbqps08" path="res://Assets/Explosion/PNG/Explosion/explosion03.png" id="4_mu8t2"]
+[ext_resource type="Texture2D" uid="uid://dli1bemfk2tv7" path="res://Assets/Explosion/PNG/Explosion/explosion04.png" id="5_b7bre"]
+[ext_resource type="Texture2D" uid="uid://bso4sunkbpdy" path="res://Assets/Explosion/PNG/Explosion/explosion05.png" id="6_bdyx1"]
+[ext_resource type="Texture2D" uid="uid://bxig1pqmlqm6v" path="res://Assets/Explosion/PNG/Explosion/explosion06.png" id="7_qc56u"]
+[ext_resource type="Texture2D" uid="uid://cu1yoymo2j6ra" path="res://Assets/Explosion/PNG/Explosion/explosion07.png" id="8_abwsd"]
+[ext_resource type="Texture2D" uid="uid://bhjm8rmuyvrtn" path="res://Assets/Explosion/PNG/Explosion/explosion08.png" id="9_esj3o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kg2tb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mrt7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p6kao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_po07c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mu8t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b7bre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bdyx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qc56u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_abwsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_esj3o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Explosion" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.581197, 0.581197)
+sprite_frames = SubResource("SpriteFrames_kg2tb")
+autoplay = "default"
+frame = 1
+frame_progress = 0.474833

@@ -12,6 +12,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if animation == "explosion":
+		return
+	
 	if jacks_car.velocity.x == -jacks_car.SPEED:
 		turning_left = true
 		turn_animation()
@@ -21,7 +24,9 @@ func _process(delta):
 	elif abs(jacks_car.velocity.x) < jacks_car.SPEED and animation != "forword":
 		centering = true
 		turn_animation()
-		
+	
+	
+	
 func turn_animation():
 	if turning_left and (animation != "left" and animation != "turn_left"):
 		play("turn_left")
@@ -39,11 +44,16 @@ func turn_animation():
 			
 		
 
+func explosion():
+	play("explosion")
+
 func _on_animation_finished():
 	if self.animation == "turn_left":
 		play("left")
-	if self.animation == "turn_right":
+	elif self.animation == "turn_right":
 		play("right")
+	elif animation == "explosion()":
+		pass
 	if centering:
 		play("forword")
 		speed_scale = 6

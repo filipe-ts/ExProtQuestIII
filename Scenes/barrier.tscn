@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://ew62wxg02c1w"]
+[gd_scene load_steps=9 format=3 uid="uid://ew62wxg02c1w"]
 
 [ext_resource type="Texture2D" uid="uid://cgfwpx4mitwqj" path="res://Assets/Barreira/barrier_v2.png" id="1_48nge"]
 [ext_resource type="Script" path="res://Scripts/barrier.gd" id="2_sxbr4"]
 [ext_resource type="FontFile" uid="uid://dnd4p1n543wyh" path="res://Assets/Fonts/ethnocentric rg.otf" id="3_b8jsw"]
 [ext_resource type="Script" path="res://Scripts/BarrierArea.gd" id="3_pdul4"]
+[ext_resource type="AudioStream" uid="uid://jrcaoq62eidw" path="res://Assets/SONS/Game/zapsplat_cartoon_anime_bright_laser_weapon_burst_79056.mp3" id="5_bssly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lvg1"]
 size = Vector2(981.333, 1950)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyw3"]
-size = Vector2(190.667, 83.3333)
+size = Vector2(190.667, 119.333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc3sd"]
-size = Vector2(4.44443, 104.889)
+size = Vector2(3.66711, 90.4444)
 
 [node name="Barrier" type="Sprite2D"]
 texture_filter = 1
@@ -33,41 +34,8 @@ shape = SubResource("RectangleShape2D_6lvg1")
 [node name="GateOpener" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GateOpener"]
-position = Vector2(0.666662, 96.3333)
+position = Vector2(0.666662, 114.333)
 shape = SubResource("RectangleShape2D_6eyw3")
-
-[node name="Walls" type="StaticBody2D" parent="."]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-475.417, 3.5)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_bc3sd")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-286, 3.33331)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_bc3sd")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-94.6667, 3.33333)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_bc3sd")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(96, 3.33333)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_bc3sd")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
-position = Vector2(287.333, 3.33333)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_bc3sd")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
-position = Vector2(475.333, 3.33333)
-scale = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_bc3sd")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
@@ -75,6 +43,46 @@ shape = SubResource("RectangleShape2D_bc3sd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_48nge")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(0, 18)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-475.417, 3.5)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_bc3sd")
+debug_color = Color(0.748522, 0.457692, 0.141422, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-286, 3.33331)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_bc3sd")
+debug_color = Color(0.748522, 0.457692, 0.141422, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-94.6667, 3.33333)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_bc3sd")
+debug_color = Color(0.748522, 0.457692, 0.141422, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(96, 3.33333)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_bc3sd")
+debug_color = Color(0.748522, 0.457692, 0.141422, 0.42)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(287.333, 3.33333)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_bc3sd")
+debug_color = Color(0.748522, 0.457692, 0.141422, 0.42)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2(475.333, 3.33333)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_bc3sd")
+debug_color = Color(0.748522, 0.457692, 0.141422, 0.42)
 
 [node name="GateA" type="Label" parent="."]
 offset_left = -437.0
@@ -160,6 +168,9 @@ text = "2 + 2 = ?"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bssly")
 
 [connection signal="body_entered" from="GateOpener" to="." method="_on_gate_opener_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

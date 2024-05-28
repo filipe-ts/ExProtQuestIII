@@ -1,16 +1,25 @@
-[gd_scene load_steps=59 format=3 uid="uid://dj57afavcyocd"]
+[gd_scene load_steps=68 format=3 uid="uid://dj57afavcyocd"]
 
 [ext_resource type="Script" path="res://Scripts/jacks_car.gd" id="1_bx8mc"]
 [ext_resource type="Texture2D" uid="uid://ctx28cnix7xpy" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_000.png" id="1_cn2oy"]
+[ext_resource type="Texture2D" uid="uid://ct1ieb2wdwrg6" path="res://Assets/Explosion/PNG/Explosion/explosion00.png" id="2_6ydld"]
 [ext_resource type="Texture2D" uid="uid://b8b8egvagrihr" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_001.png" id="2_sy0dd"]
+[ext_resource type="Texture2D" uid="uid://bpt3760l41352" path="res://Assets/Explosion/PNG/Explosion/explosion01.png" id="3_aamf2"]
 [ext_resource type="Texture2D" uid="uid://d0u1gt44jmaq2" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_002.png" id="3_isb27"]
+[ext_resource type="Texture2D" uid="uid://cvr00jysb6h73" path="res://Assets/Explosion/PNG/Explosion/explosion02.png" id="4_fm2ov"]
 [ext_resource type="Texture2D" uid="uid://d4j3tvd7w4n6u" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_003.png" id="4_ha2oj"]
 [ext_resource type="Texture2D" uid="uid://c2xfyldfoaapy" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_004.png" id="5_ymo12"]
+[ext_resource type="Texture2D" uid="uid://cfvqwhgbqps08" path="res://Assets/Explosion/PNG/Explosion/explosion03.png" id="5_yocvs"]
+[ext_resource type="Texture2D" uid="uid://dli1bemfk2tv7" path="res://Assets/Explosion/PNG/Explosion/explosion04.png" id="6_iukk4"]
 [ext_resource type="Texture2D" uid="uid://cfj3rcdmfc58f" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_005.png" id="6_jo8px"]
 [ext_resource type="Texture2D" uid="uid://cew1qd8uicrvm" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_006.png" id="7_2ssia"]
+[ext_resource type="Texture2D" uid="uid://bso4sunkbpdy" path="res://Assets/Explosion/PNG/Explosion/explosion05.png" id="7_d1l6y"]
+[ext_resource type="Texture2D" uid="uid://bxig1pqmlqm6v" path="res://Assets/Explosion/PNG/Explosion/explosion06.png" id="8_biaue"]
 [ext_resource type="Texture2D" uid="uid://d1ei6n1sgtkc7" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_007.png" id="8_o67vv"]
 [ext_resource type="Texture2D" uid="uid://dg71ta326j604" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_008.png" id="9_4t6el"]
+[ext_resource type="Texture2D" uid="uid://cu1yoymo2j6ra" path="res://Assets/Explosion/PNG/Explosion/explosion07.png" id="9_wo4ty"]
 [ext_resource type="Texture2D" uid="uid://ty7bv3spti46" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_009.png" id="10_74reo"]
+[ext_resource type="Texture2D" uid="uid://bhjm8rmuyvrtn" path="res://Assets/Explosion/PNG/Explosion/explosion08.png" id="10_t4fqf"]
 [ext_resource type="Texture2D" uid="uid://io0fri80ql8o" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_010.png" id="11_1uhmk"]
 [ext_resource type="Texture2D" uid="uid://con71pgto2xwf" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTH/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTH_011.png" id="12_yto7m"]
 [ext_resource type="Texture2D" uid="uid://5xt283a38y1g" path="res://Assets/SUPERCAR TOPDOWN/Magenta/MOVE/NORTHWEST/SEPARATED/Magenta_SUPERCAR_CLEAN_NORTHWEST_000.png" id="13_grny4"]
@@ -60,6 +69,38 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8v7mt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6ydld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aamf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fm2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yocvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iukk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d1l6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_biaue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wo4ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t4fqf")
+}],
+"loop": true,
+"name": &"explosion",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_cn2oy")
@@ -244,7 +285,7 @@ script = ExtResource("1_bx8mc")
 
 [node name="JCAnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8v7mt")
-animation = &"turn_left"
+animation = &"left"
 speed_scale = 1.5
 script = ExtResource("51_7vomq")
 

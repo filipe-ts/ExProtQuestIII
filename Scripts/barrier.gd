@@ -49,6 +49,8 @@ var points = 100
 var gate_array = [gate_a, gate_b, gate_c, gate_d, gate_e]
 var gates_labels: Array
 
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_gates_labels(gates_labels)
@@ -74,8 +76,10 @@ func _set_gate(gate: GATES):
 func _on_gate_opener_body_entered(body):
 	if body is JacksCar:
 		(correct_gate as Gate).set_collision_layer_value(2, false)
+		(correct_gate as Gate).area_2d.set_collision_mask_value(1, false)
 		correct_gate.collision_shape_2d.debug_color = Color(0,1,1,0.2)
 		(correct_gate as Gate).animated_sprite_2d.play("open", 1.4)
+		audio_stream_player_2d.play()
 		await get_tree().create_timer(1).timeout
 		get_tree().call_group("GameHud", "change_score", points)
 		get_tree().call_group("Main", "_increase_obstacle_speed")
