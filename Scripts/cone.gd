@@ -23,3 +23,8 @@ func _on_body_entered(body):
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	await get_tree().create_timer(1).timeout
 	queue_free()
+
+
+func _on_area_entered(area):
+	if area.get_collision_layer_value(2):
+		queue_free()

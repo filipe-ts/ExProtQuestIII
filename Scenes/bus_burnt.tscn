@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d02en3jbie5ff"]
+
+[ext_resource type="Script" path="res://Scripts/bus_burnt.gd" id="1_56b6f"]
+[ext_resource type="Texture2D" uid="uid://bybq10ex24dw3" path="res://Assets/Wreckage/Burnt/Bus/BUS_Burnt_004.png" id="1_wulol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqhtp"]
+size = Vector2(152, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrn16"]
+size = Vector2(142, 61)
+
+[node name="bus_burnt" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_56b6f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 5)
+texture = ExtResource("1_wulol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_aqhtp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(6.8, 3.4)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_vrn16")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

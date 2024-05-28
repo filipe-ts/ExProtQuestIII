@@ -13,7 +13,7 @@ var barrier = barrier_scene.instantiate()
 @onready var audio_stream_player = $AudioStreamPlayer
 var gm_overlay = preload("res://Scenes/game_over_overlay.tscn").instantiate()
 @onready var game_hud = $GameHud
-
+@onready var wrecks = $Wrecks
 
 
 @onready var jacks_car = $JacksCar
@@ -94,6 +94,7 @@ func _process(delta):
 		
 	if is_cone_movable:
 		cones.position.y += obstcles_velocity_y
+		wrecks.position.y += obstcles_velocity_y
 	
 	if is_road_movable:
 		road_genator.position.y += obstcles_velocity_y	
@@ -155,7 +156,18 @@ func _on_cones_timer_timeout():
 			randomize()
 			random_x = round(randfn(jacks_car.position.x, 1920/5))
 		cone.global_position = Vector2(random_x, -10)
-	
+
+
+
+func _on_wrecks_timer_timeout():
+	if can_spawn_cone and jacks_car.is_running:
+		is_cone_movable = true
+		randomize()
+		var random_x = round(randfn(jacks_car.position.x, 1920/20))
+		while random_x < 254 or random_x > 1686:
+			randomize()
+			random_x = round(randfn(jacks_car.position.x, 1920/20))
+		wrecks.spawn(random_x)
 
 
 func _on_barrier_detecter_area_entered(area):
@@ -219,3 +231,5 @@ func _escape():
 func remove_points_on_pause():
 	if barrier != null:
 		barrier.points = 1
+
+
