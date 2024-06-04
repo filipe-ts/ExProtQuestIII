@@ -11,7 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if points >= 1000 and !escaped:
+	if points >= 1500 and !escaped:
 		escaped = true
 		get_tree().call_group("Main", "_escape")
 

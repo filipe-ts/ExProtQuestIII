@@ -1,103 +1,118 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpkcbf27wc2dv"]
+[gd_scene load_steps=8 format=3 uid="uid://cpkcbf27wc2dv"]
 
 [ext_resource type="Script" path="res://Scenes/config.gd" id="1_c33p3"]
 [ext_resource type="Texture2D" uid="uid://11li8uxd0i3w" path="res://Assets/BGS/Background/BGFree1.png" id="2_61b71"]
-[ext_resource type="FontFile" uid="uid://bi3o4b1c12mju" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_gdgtd"]
-[ext_resource type="FontFile" uid="uid://dhtdk3ap0d5ol" path="res://Assets/Fonts/ethnocentric rg.otf" id="4_dtn23"]
-[ext_resource type="AudioStream" uid="uid://bg8qnqq88ktlm" path="res://Assets/SONS/music/cyberpunk-street.mp3" id="5_c4888"]
+[ext_resource type="FontFile" uid="uid://deujaxpcekt2y" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_gdgtd"]
+[ext_resource type="FontFile" uid="uid://dnd4p1n543wyh" path="res://Assets/Fonts/ethnocentric rg.otf" id="4_dtn23"]
+[ext_resource type="FontFile" uid="uid://dn04rmddp7er3" path="res://Assets/Fonts/Teko-Bold.ttf" id="4_kvka6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5byed"]
+bg_color = Color(0.619608, 0.270588, 0.470588, 0.811765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m24sf"]
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.811765)
 
 [node name="config" type="CanvasLayer"]
 script = ExtResource("1_c33p3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 offset_left = 3.0
 offset_top = 4.0
 offset_right = 1931.0
 offset_bottom = 1086.0
 texture = ExtResource("2_61b71")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 3.0
-offset_top = 263.0
-offset_right = 57.0
-offset_bottom = 322.0
-theme_override_fonts/font = ExtResource("3_gdgtd")
-theme_override_font_sizes/font_size = 48
-text = "A"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -490.5
+offset_right = 587.0
+offset_bottom = 412.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 71.0
-offset_top = 266.0
-offset_right = 320.0
-offset_bottom = 325.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Objetivos" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dtn23")
-theme_override_font_sizes/font_size = 48
-text = "MOVER PARA DIREITA"
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_5byed")
+text = "Objetivos
+"
+horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
-offset_top = 326.0
-offset_right = 54.0
-offset_bottom = 385.0
-theme_override_fonts/font = ExtResource("3_gdgtd")
-theme_override_font_sizes/font_size = 48
-text = "D"
+[node name="#5" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1174, 329)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_kvka6")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_m24sf")
+text = "  Preste atenção nas expressões númericas que 
+  aprecem na estrada, e alinhe o carro com a
+  passagem que possui o resultado correto da
+  expressão, e não esqueça de desviar dos obstáculos. "
+autowrap_mode = 2
 
-[node name="Label4" type="Label" parent="."]
-offset_left = 67.0
-offset_top = 328.0
-offset_right = 804.0
-offset_bottom = 387.0
+[node name="Controles" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_dtn23")
-theme_override_font_sizes/font_size = 48
-text = "MOVER PARA ESQUERDA"
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_5byed")
+text = "Controles
+"
+horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="."]
-offset_left = -1.0
-offset_top = 388.0
-offset_right = 53.0
-offset_bottom = 447.0
-theme_override_fonts/font = ExtResource("3_gdgtd")
-theme_override_font_sizes/font_size = 48
-text = "W"
+[node name="#1" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_kvka6")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_m24sf")
+text = "Mover para a direita: seta direira, w, Analógico
+"
+horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="."]
-offset_left = 72.0
-offset_top = 394.0
-offset_right = 924.0
-offset_bottom = 453.0
-theme_override_fonts/font = ExtResource("4_dtn23")
-theme_override_font_sizes/font_size = 48
-text = "MOVER PARA FRENTE"
+[node name="#2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_kvka6")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_m24sf")
+text = "Mover para a esquerda: seta esquerda, a, Analógico"
+horizontal_alignment = 1
 
-[node name="Label7" type="Label" parent="."]
-offset_top = 455.0
-offset_right = 60.0
-offset_bottom = 514.0
-theme_override_fonts/font = ExtResource("3_gdgtd")
-theme_override_font_sizes/font_size = 48
-text = "S"
+[node name="#3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_kvka6")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_m24sf")
+text = "Desacelerar: seta pra baixo, s, Analógico
+"
+horizontal_alignment = 1
 
-[node name="Label8" type="Label" parent="."]
-offset_left = 73.0
-offset_top = 458.0
-offset_right = 925.0
-offset_bottom = 517.0
-theme_override_fonts/font = ExtResource("4_dtn23")
-theme_override_font_sizes/font_size = 48
-text = "MOVER PARA tras"
+[node name="#4" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_kvka6")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_m24sf")
+text = "Pausar: Apertar Analógico 2x, START"
+horizontal_alignment = 1
 
-[node name="voltar" type="Button" parent="."]
-offset_left = 1.0
-offset_top = 10.0
-offset_right = 278.0
-offset_bottom = 77.0
+[node name="Back_Button" type="Button" parent="."]
+offset_left = 373.0
+offset_top = 982.0
+offset_right = 1547.0
+offset_bottom = 1049.0
 theme_override_fonts/font = ExtResource("3_gdgtd")
 theme_override_font_sizes/font_size = 48
 text = "VOLTAR
 "
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_c4888")
-autoplay = true
-
-[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

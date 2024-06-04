@@ -1,33 +1,129 @@
-[gd_scene load_steps=4 format=3 uid="uid://di53aoulr5cmr"]
+[gd_scene load_steps=8 format=3 uid="uid://cpttosvtoutvh"]
 
-[ext_resource type="Texture2D" uid="uid://cfq82aimgbipi" path="res://Assets/BGS/cyberpunk-street-files/Version 1/PNG/layers/far-buildings.png" id="1_2iaf7"]
-[ext_resource type="Script" path="res://Scenes/score_board.gd" id="1_xpqf3"]
-[ext_resource type="AudioStream" uid="uid://bg8qnqq88ktlm" path="res://Assets/SONS/music/cyberpunk-street.mp3" id="3_r7lcp"]
+[ext_resource type="Script" path="res://Scenes/hall_of_fame.gd" id="1_akbfe"]
+[ext_resource type="Texture2D" uid="uid://cfq82aimgbipi" path="res://Assets/BGS/cyberpunk-street-files/Version 1/PNG/layers/far-buildings.png" id="2_j7qxl"]
+[ext_resource type="FontFile" uid="uid://deujaxpcekt2y" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_314hs"]
+[ext_resource type="FontFile" uid="uid://dnd4p1n543wyh" path="res://Assets/Fonts/ethnocentric rg.otf" id="4_xla3l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rydwg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quk5f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddy2d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
 
 [node name="Score_board" type="CanvasLayer"]
-script = ExtResource("1_xpqf3")
+script = ExtResource("1_akbfe")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1934.0
-offset_bottom = 1108.0
-texture = ExtResource("1_2iaf7")
+texture_filter = 1
+offset_right = 1918.0
+offset_bottom = 1084.0
+texture = ExtResource("2_j7qxl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -387.5
+offset_right = 587.0
+offset_bottom = 387.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="#1" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_314hs")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_rydwg")
+text = "MCL: 2000 pts
+"
+horizontal_alignment = 1
+
+[node name="#2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_314hs")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_quk5f")
+text = "MCL: 2000 pts
+"
+horizontal_alignment = 1
+
+[node name="#3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_314hs")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_quk5f")
+text = "MCL: 2000 pts
+"
+horizontal_alignment = 1
+
+[node name="#4" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_314hs")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_quk5f")
+text = "MCL: 2000 pts
+"
+horizontal_alignment = 1
+
+[node name="#5" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_314hs")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ddy2d")
+text = "MCL: 2000 pts
+"
+horizontal_alignment = 1
 
 [node name="Back_Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 108
+offset_left = 373.0
+offset_top = 861.0
+offset_right = 1547.0
+offset_bottom = 928.0
+theme_override_fonts/font = ExtResource("3_314hs")
+theme_override_font_sizes/font_size = 48
 text = "VOLTAR
 "
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_r7lcp")
-autoplay = true
-
 [node name="Label" type="Label" parent="."]
-offset_top = 207.0
-offset_right = 573.0
-offset_bottom = 355.0
-theme_override_font_sizes/font_size = 108
-text = "BEST RANK"
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -406.0
+offset_bottom = -273.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_xla3l")
+theme_override_font_sizes/font_size = 110
+text = "Hall da fama"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

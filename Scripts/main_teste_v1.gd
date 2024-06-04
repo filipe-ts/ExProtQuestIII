@@ -15,6 +15,8 @@ var gm_overlay = preload("res://Scenes/game_over_overlay.tscn").instantiate()
 @onready var game_hud = $GameHud
 @onready var wrecks = $Wrecks
 
+@onready var pause_menu = $PauseMenu
+
 
 @onready var jacks_car = $JacksCar
 @onready var cones_timer = $ConesTimer
@@ -43,6 +45,7 @@ var max_obstcles_velocity_y = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pause_menu.hide()
 	barrier_timer.start()
 	cones_timer.start()
 	gerador_de_perguntas.gerar_pergunta_aleatoria()
@@ -110,6 +113,10 @@ func _process(delta):
 	if pause_push > 1:
 			pause_push = 0
 			get_tree().paused = true
+			
+	if Input.is_action_just_pressed("pause"):
+		pause_push = 0
+		get_tree().paused = true
 
 
 func _on_barrier_timer_timeout():
@@ -231,5 +238,9 @@ func _escape():
 func remove_points_on_pause():
 	if barrier != null:
 		barrier.points = 1
+		
+
+func _remove_from_tree():
+	queue_free()
 
 

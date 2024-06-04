@@ -1,15 +1,22 @@
 extends CanvasLayer
 
+var main_menu = preload("res://Scenes/start_screen.tscn")
+@onready var back_button = $Back_Button
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	back_button.grab_focus()
+	var audio_player = Globalmusic.get_node("AudioStreamPlayer")
+	if not audio_player.is_playing():
+		audio_player.play()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_voltar_pressed():
 	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")
+
+
+func _on_back_button_pressed():
+	var main_menu_instance = main_menu.instantiate()
+	get_tree().root.add_child(main_menu_instance)
+	main_menu_instance.btn_manual.grab_focus()
+	queue_free()

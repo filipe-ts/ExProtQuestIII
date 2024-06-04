@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/cyberpunk-street.mp3-e78c50f8fe437574baa3ee7d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

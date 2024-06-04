@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvce0453n7xik"]
+[gd_scene load_steps=18 format=3 uid="uid://dvce0453n7xik"]
 
 [ext_resource type="PackedScene" uid="uid://dj57afavcyocd" path="res://Scenes/jacks_car.tscn" id="1_hvsda"]
 [ext_resource type="Script" path="res://Scripts/main_teste_v1.gd" id="1_pxtku"]
@@ -11,9 +11,37 @@
 [ext_resource type="PackedScene" uid="uid://d0w7luyondgmy" path="res://Scenes/game_hud.tscn" id="6_u0311"]
 [ext_resource type="Script" path="res://Scripts/Wrecks.gd" id="7_jdmkn"]
 [ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="9_n1684"]
+[ext_resource type="FontFile" uid="uid://dnd4p1n543wyh" path="res://Assets/Fonts/ethnocentric rg.otf" id="12_sx6tu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw2by"]
 size = Vector2(1916, 61)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhjo5"]
+bg_color = Color(0.627451, 0, 0, 1)
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqkm6"]
+bg_color = Color(0.627451, 0, 0, 1)
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsc8k"]
+bg_color = Color(0.227451, 0, 0, 1)
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.227451, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sasg1"]
+bg_color = Color(0.627451, 0, 0, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
 
 [node name="Main" type="Node" groups=["Main"]]
 process_mode = 1
@@ -89,10 +117,63 @@ wait_time = 0.5
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 2
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("9_n1684")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -332.5
+offset_right = 587.0
+offset_bottom = 332.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer"]
+process_mode = 2
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 2
+layout_mode = 2
+focus_neighbor_right = NodePath("../Sair")
+focus_neighbor_bottom = NodePath("../Sair")
+focus_next = NodePath("../Sair")
+theme_override_fonts/font = ExtResource("12_sx6tu")
+theme_override_font_sizes/font_size = 60
+text = "Continuar"
+
+[node name="Sair" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer"]
+process_mode = 2
+layout_mode = 2
+focus_neighbor_left = NodePath("../Button")
+focus_neighbor_top = NodePath("../Button")
+focus_previous = NodePath("../Button")
+theme_override_fonts/font = ExtResource("12_sx6tu")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhjo5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jqkm6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qsc8k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sasg1")
+text = "Sair"
 
 [connection signal="timeout" from="ConesTimer" to="." method="_on_cones_timer_timeout"]
 [connection signal="timeout" from="BarrierTimer" to="." method="_on_barrier_timer_timeout"]
@@ -101,3 +182,5 @@ script = ExtResource("9_n1684")
 [connection signal="area_entered" from="BarrierDetecter" to="." method="_on_barrier_detecter_area_entered"]
 [connection signal="area_exited" from="BarrierDetecter" to="." method="_on_barrier_detecter_area_exited"]
 [connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Button" to="PauseMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Sair" to="PauseMenu" method="_on_sair_pressed"]

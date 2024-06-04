@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cplok1th5pd7t"]
+[gd_scene load_steps=5 format=3 uid="uid://cplok1th5pd7t"]
 
 [ext_resource type="Script" path="res://Scenes/start_screen.gd" id="1_vl7pb"]
 [ext_resource type="Texture2D" uid="uid://dpswuclmiy7k7" path="res://Assets/BGS/cyberpunk-street-files/Version 1/PNG/cyberpunk-street.png" id="2_cubpb"]
 [ext_resource type="FontFile" uid="uid://trppbprs86ch" path="res://Assets/Fonts/Cyborg Punk.ttf" id="2_eg27y"]
 [ext_resource type="FontFile" uid="uid://deujaxpcekt2y" path="res://Assets/Fonts/ethnocentric rg it.otf" id="3_6x4kh"]
-[ext_resource type="AudioStream" uid="uid://bg8qnqq88ktlm" path="res://Assets/SONS/music/cyberpunk-street.mp3" id="5_cuo6j"]
 
 [node name="Start_Screen" type="CanvasLayer"]
 script = ExtResource("1_vl7pb")
@@ -22,10 +21,10 @@ expand_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 584.0
-offset_top = 516.0
-offset_right = -578.0
-offset_bottom = -118.0
+offset_left = 376.0
+offset_top = 486.0
+offset_right = -370.0
+offset_bottom = -87.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
@@ -46,40 +45,38 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.854902, 0.803922, 0.964706, 1)
 theme_override_fonts/font = ExtResource("3_6x4kh")
 theme_override_font_sizes/font_size = 48
-text = "START
-"
+text = "Iniciar - Modo Fuga"
+
+[node name="BTN Modo Infinito" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.854902, 0.803922, 0.964706, 1)
+theme_override_fonts/font = ExtResource("3_6x4kh")
+theme_override_font_sizes/font_size = 48
+text = "Iniciar - Modo Infinito"
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.792157, 0.780392, 0.85098, 1)
 theme_override_fonts/font = ExtResource("3_6x4kh")
 theme_override_font_sizes/font_size = 48
-text = "scoreboard
-"
-
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.792157, 0.780392, 0.85098, 1)
-theme_override_fonts/font = ExtResource("3_6x4kh")
-theme_override_font_sizes/font_size = 48
-toggle_mode = true
-text = "modo infinito
+text = "Hall da fama
 "
 
 [node name="Button4" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_6x4kh")
 theme_override_font_sizes/font_size = 48
-text = "Configurações"
+text = "INSTRUÇÕES"
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -771.5
-offset_top = 159.0
+offset_top = 212.0
 offset_right = 771.5
-offset_bottom = 346.0
+offset_bottom = 399.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -91,13 +88,9 @@ theme_override_constants/shadow_offset_y = 9
 theme_override_constants/shadow_outline_size = 30
 theme_override_fonts/font = ExtResource("2_eg27y")
 theme_override_font_sizes/font_size = 108
-text = "CHALLENGER ROAD"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_cuo6j")
-autoplay = true
+text = "CHALLENGE ROAD"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BTN Modo Infinito" to="." method="_on_btn_modo_infinito_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

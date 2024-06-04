@@ -285,7 +285,7 @@ script = ExtResource("1_bx8mc")
 
 [node name="JCAnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8v7mt")
-animation = &"left"
+animation = &"turn_left"
 speed_scale = 1.5
 script = ExtResource("51_7vomq")
 
