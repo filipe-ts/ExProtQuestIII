@@ -99,6 +99,7 @@ script = ExtResource("7_jdmkn")
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="DebugLabel" type="Label" parent="."]
+visible = false
 offset_left = 22.0
 offset_top = 134.0
 offset_right = 159.0

@@ -58,6 +58,8 @@ func begin_game():
 		get_tree().root.add_child.call_deferred(begining_text)
 		await get_tree().create_timer(3).timeout
 		begining_text.queue_free()
+	else:
+		game_hud.infinity_mode = true
 	jacks_car.velocity.y = -100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -112,11 +114,13 @@ func _process(delta):
 
 	if pause_push > 1:
 			pause_push = 0
-			get_tree().paused = true
+			if jacks_car.is_running:
+				get_tree().paused = true
 			
 	if Input.is_action_just_pressed("pause"):
 		pause_push = 0
-		get_tree().paused = true
+		if jacks_car.is_running:
+			get_tree().paused = true
 
 
 func _on_barrier_timer_timeout():

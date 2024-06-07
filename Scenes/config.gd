@@ -10,11 +10,6 @@ func _ready():
 		audio_player.play()
 
 
-
-func _on_voltar_pressed():
-	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")
-
-
 func _on_back_button_pressed():
 	var main_menu_instance = main_menu.instantiate()
 	get_tree().root.add_child(main_menu_instance)

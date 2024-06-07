@@ -8,3 +8,4 @@ script = ExtResource("1_emwbx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_2khpt")
+volume_db = -12.0

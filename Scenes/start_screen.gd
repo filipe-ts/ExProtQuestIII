@@ -11,21 +11,32 @@ func _ready():
 	btn_fuga.grab_focus()
 
 func _on_button_pressed():
-	var main_scene = preload("res://Scenes/main.tscn").instantiate()
+	var main_ = preload("res://Scenes/main.tscn")
+	var main_scene = main_.instantiate()
+	
 	main_scene.infinity_mode = false
+	hide()
 	get_tree().root.add_child(main_scene)
+	
 	var audio_player = Globalmusic.get_node("AudioStreamPlayer")
 	audio_player.stop()
+	print("limpar")
 	queue_free()
 
 
 func _on_btn_modo_infinito_pressed():
-	var main_scene = preload("res://Scenes/main.tscn").instantiate()
+	var main_ = preload("res://Scenes/main.tscn")
+	var main_scene = main_.instantiate()
+	
 	main_scene.infinity_mode = true
+	hide()
 	get_tree().root.add_child(main_scene)
+	
 	var audio_player = Globalmusic.get_node("AudioStreamPlayer")
 	audio_player.stop()
+	print("limpar")
 	queue_free()
+	
 
 
 func _on_button_2_pressed():
@@ -38,6 +49,9 @@ func _on_button_3_pressed():
 	pass
 
 func _on_button_4_pressed():
-	get_tree().change_scene_to_file("res://Scenes/config.tscn")
+	var config_scene = preload("res://Scenes/config.tscn")
+	var instance = config_scene.instantiate()
+	get_tree().root.add_child(instance)
+	queue_free()
 
 

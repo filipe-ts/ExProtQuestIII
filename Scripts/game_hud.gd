@@ -3,6 +3,7 @@ extends Control
 @onready var score = $Score
 var points = 0
 var escaped = false
+var infinity_mode = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if points >= 1500 and !escaped:
+	if points >= 1500 and !escaped and !infinity_mode:
 		escaped = true
 		get_tree().call_group("Main", "_escape")
 
